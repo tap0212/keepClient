@@ -33,6 +33,9 @@
 }
 
 @media only screen and (max-width:500px){
+    .navbar{
+        border: none;
+    }
     .userName{
         margin-top: 2%;
     }

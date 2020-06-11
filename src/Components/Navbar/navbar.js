@@ -22,7 +22,8 @@ import './navbar.scss'
     const handleClear = () => {
         localStorage.clear()
         window.sessionStorage.clear()
-        props.dummy(true)
+        props.dummy(null)
+        props.setOpen(true)
     }
      const userName = window.sessionStorage.getItem("jwt") ? JSON.parse(window.sessionStorage.getItem("jwt")).user.name : null
     return (

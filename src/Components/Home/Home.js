@@ -34,6 +34,7 @@ const Home = () => {
     const [loadingNote, setLoadingNote] = useState(false)
     const [success, setSuccess] = useState(false)
     const [alreadyUser, setAlreadyUer] = useState(false)
+    const [logout, setLogout] = useState("")
     useEffect(() => {
         setOpen(true)
         if(localStorage.getItem("userName") !== null){
@@ -42,7 +43,7 @@ const Home = () => {
     }, [])
 
     useEffect(() => {
-        setFetching(true)
+            setFetching(true)
         const {user, token} = isAuthenticated()
         GetAllNotes()
         .then(res => {
@@ -54,6 +55,7 @@ const Home = () => {
             console.log(err)
             setFetching(false)
         })
+        
     }, [success])
 
      
@@ -202,7 +204,7 @@ const Home = () => {
     }
     return (
         <div>
-            <Navbar dummy={setFetching}/>
+            <Navbar setOpen={setOpen} dummy={setFetching}/>
             <div className="note-container">
                 <div className="note-box">
                     <div>
@@ -249,11 +251,12 @@ const Home = () => {
                     </div>
                     :
                     <div>
-                       {fetching 
+                       {
+                           fetching 
                        ?
-                     <div className="keeps">
-                     <Skeleton count={5} />
-                     </div>
+                            <div className="keeps">
+                                <Skeleton count={5} />
+                            </div>
                        :
                            keeps.map((keep, index) => {
                                return <Tile setOpenLogin={setOpen} setSuccess={setSuccess}  keep={keep} key={index} />
