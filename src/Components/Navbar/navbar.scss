@@ -1,0 +1,42 @@
+@import '../../Utils/theme.scss';
+.navbar{
+    border: 0.3px solid $purple-lt;
+    height: 6vh;
+    width: 100vw;
+    .logo{
+        padding: 0.5%;
+        padding-left: 2%;
+        color: $purple;
+    }
+    .keep{
+        color: $purple;
+        font-size: 1.2em;
+        font-weight: 400;
+    }
+    .backup{
+        float: right;
+        color: $purple;
+        padding: 0.8%;
+    }
+    .logout{
+        float: right;
+        font-weight: 400;
+        margin-top: 1%;
+        margin: 1%;
+        color: $purple;
+        font-size: 2em;
+    }
+    .logout:hover, .logout:active{
+        color: red;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width:500px){
+    .userName{
+        margin-top: 2%;
+    }
+    .packman{
+        display: none;
+    }
+}
