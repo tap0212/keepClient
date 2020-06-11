@@ -222,6 +222,7 @@ const Home = () => {
 
                     <div>
                     <textarea 
+                    style={{resize:"none"}}
                     name="note" 
                     id="mote" 
                     cols="30" 
